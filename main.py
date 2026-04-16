@@ -11,7 +11,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
-
+#Preproessing and pathing for iamges
 class FolderCIFAR10(Dataset):
     def __init__(self, root, transform=None):
         self.root = Path(root)
@@ -40,7 +40,7 @@ class FolderCIFAR10(Dataset):
             image = self.transform(image)
         return image, label
 
-
+#Convolution block functions
 class ConvBlock(nn.Module):
     def __init__(self, in_channels, out_channels, act_layer):
         super().__init__()
@@ -60,6 +60,7 @@ class ConvBlock(nn.Module):
         return x
 
 
+#CNN
 class SimpleFeatureCNN(nn.Module):
     def __init__(self, num_classes=10, channels=(32, 64, 128, 256), mlp_hidden=256):
         super().__init__()
@@ -73,6 +74,8 @@ class SimpleFeatureCNN(nn.Module):
             act_layer(),
         )
 
+        #main blocks for convolutions
+
         self.block1 = ConvBlock(c1, c2, act_layer)
         self.maxpool = nn.MaxPool2d(2)
         self.block2 = ConvBlock(c2, c3, act_layer)
@@ -82,6 +85,7 @@ class SimpleFeatureCNN(nn.Module):
         )
         self.block3 = ConvBlock(c3, c4, act_layer)
 
+        #pooling and classifier head
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         self.classifier = nn.Sequential(
             nn.Flatten(),
@@ -91,6 +95,7 @@ class SimpleFeatureCNN(nn.Module):
             nn.Linear(mlp_hidden, num_classes),
         )
 
+    #STEM
     def forward_features(self, x):
         x = self.stem(x)
         feat1 = self.block1(x)
@@ -261,7 +266,7 @@ def save_one_block(feature_tensor, title, save_path, true_name, pred_name, conf)
     plt.savefig(save_path, dpi=200)
     plt.close(fig)
 
-
+# ignore gradients
 @torch.no_grad()
 def save_feature_maps(model, example, class_names, mean, std, save_dir):
     save_dir = Path(save_dir)
