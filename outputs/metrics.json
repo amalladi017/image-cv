@@ -1,0 +1,173 @@
+{
+  "device": "cuda",
+  "channels": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "activation": "ReLU",
+  "mlp_hidden": 256,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "epochs": 20,
+  "best_test_accuracy": 86.09721944388878,
+  "overall_test_accuracy": 86.09721944388878,
+  "per_class_accuracy": {
+    "airplane": 86.27254509018036,
+    "automobile": 94.9,
+    "bird": 78.1,
+    "cat": 75.6,
+    "deer": 84.4,
+    "dog": 77.8,
+    "frog": 92.5,
+    "horse": 85.4,
+    "ship": 94.2,
+    "truck": 91.8
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.7405258409881592,
+      "train_accuracy": 30.798,
+      "test_accuracy": 35.51710342068414
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.3223217827606202,
+      "train_accuracy": 50.672,
+      "test_accuracy": 56.36127225445089
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.046476090106964,
+      "train_accuracy": 62.32,
+      "test_accuracy": 58.87177435487097
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.8933683631515503,
+      "train_accuracy": 68.17,
+      "test_accuracy": 70.74414882976595
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.786338017539978,
+      "train_accuracy": 72.448,
+      "test_accuracy": 69.55391078215644
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6967994800949097,
+      "train_accuracy": 75.914,
+      "test_accuracy": 74.94498899779956
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.6393078875541687,
+      "train_accuracy": 78.206,
+      "test_accuracy": 76.64532906581316
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.5884163370895386,
+      "train_accuracy": 79.876,
+      "test_accuracy": 79.875975195039
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.5568848589134217,
+      "train_accuracy": 80.894,
+      "test_accuracy": 77.13542708541708
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.5156877715682984,
+      "train_accuracy": 82.3,
+      "test_accuracy": 80.66613322664533
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.48646388246536254,
+      "train_accuracy": 83.268,
+      "test_accuracy": 79.77595519103821
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.46009231273651124,
+      "train_accuracy": 84.31,
+      "test_accuracy": 82.93658731746349
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.4359247685146332,
+      "train_accuracy": 85.062,
+      "test_accuracy": 81.2862572514503
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.4143841119384766,
+      "train_accuracy": 85.912,
+      "test_accuracy": 83.02660532106421
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.39329426317214966,
+      "train_accuracy": 86.484,
+      "test_accuracy": 83.91678335667133
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.37779116770744325,
+      "train_accuracy": 87.086,
+      "test_accuracy": 83.37667533506702
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.36035316217422486,
+      "train_accuracy": 87.63,
+      "test_accuracy": 84.70694138827766
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.3452656191062927,
+      "train_accuracy": 88.168,
+      "test_accuracy": 84.57691538307661
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.328365955619812,
+      "train_accuracy": 88.66,
+      "test_accuracy": 86.09721944388878
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.3199535238170624,
+      "train_accuracy": 89.096,
+      "test_accuracy": 83.82676535307061
+    }
+  ],
+  "selected_examples": {
+    "easy_correct": {
+      "index": 120,
+      "true_label": "airplane",
+      "pred_label": "airplane",
+      "confidence": 1.0,
+      "folder": "outputs\\feature_maps\\easy_correct"
+    },
+    "hard_correct": {
+      "index": 3590,
+      "true_label": "cat",
+      "pred_label": "cat",
+      "confidence": 0.21954405307769775,
+      "folder": "outputs\\feature_maps\\hard_correct"
+    },
+    "misclassified": {
+      "index": 130,
+      "true_label": "airplane",
+      "pred_label": "ship",
+      "confidence": 0.9999916553497314,
+      "folder": "outputs\\feature_maps\\misclassified"
+    }
+  }
+}

@@ -272,7 +272,7 @@ def save_feature_maps(model, example, class_names, mean, std, save_dir):
     save_dir = Path(save_dir)
     save_dir.mkdir(parents=True, exist_ok=True)
 
-    image = example["image"].unsqueeze(0)
+    image = example["image"].unsqueeze(0).to(next(model.parameters()).device)
     feat1, feat2, feat3 = model.forward_features(image)
 
     true_name = class_names[example["true"]]
